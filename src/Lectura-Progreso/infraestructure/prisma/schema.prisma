@@ -1,0 +1,32 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL") 
+}
+
+model SesionLectura {
+  idSesion        Int       @id @default(autoincrement())
+  idUsuario       Int       // ID recibido desde microservicio de usuarios
+  idLibro         Int       // ID recibido desde microservicio de libros
+  fechaInicio     DateTime
+  fechaFin        DateTime
+  paginasLeidas   Int
+  ultimaPaginaLeida Int 
+  duracionMinutos Int
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Racha {
+  idRacha             Int       @id @default(autoincrement())
+  idUsuario           Int       // ID recibido desde microservicio de usuarios
+  diasConsecutivos    Int
+  ultimaFechaLectura  DateTime
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+}
