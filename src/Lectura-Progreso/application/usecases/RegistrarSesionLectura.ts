@@ -4,7 +4,7 @@ import { SesionLecturaFactory } from "../../domain/factories/SesionLecturaFactor
 import { RachaFactory } from "../../domain/factories/RachaFactory";
 import { SesionCreadaEvent } from "../../domain/event/SesionCreadaEvent";
 
-export class RegistrarSesionLectora {
+export class RegistrarSesionLectura {
   constructor(
     private readonly sesionRepo: SesionLecturaRepository,
     private readonly rachaRepo: RachaRepository

@@ -1,4 +1,4 @@
-import { SesionLectura } from '../entities/Sesionlectura';
+import { SesionLectura } from '../entities/SesionLectura';
 
 export class SesionLecturaFactory {
   static crearNuevaSesion(

@@ -1,16 +1,14 @@
 import { Request, Response } from "express";
-import { RegistrarSesionLectora } from "../../application/usecases/RegistrarSesionLectura";
+import { RegistrarSesionLectura } from "../../application/usecases/RegistrarSesionLectura";
 import { SesionLecturaPrismaRepository } from "../repositories/SesionLecturaPrismaRepository";
 import { RachaPrismaRepository } from "../repositories/RachaPrismaRepository";
+import { registrarSesionLecturaUseCase } from "../di/config";
 
 export class LecturaController {
   private static sesionRepo = new SesionLecturaPrismaRepository();
   private static rachaRepo  = new RachaPrismaRepository();
 
-  private static registrarSesionUseCase = new RegistrarSesionLectora(
-    LecturaController.sesionRepo,
-    LecturaController.rachaRepo
-  );
+  private static registrarSesionUseCase = registrarSesionLecturaUseCase;
 
   // ───────── POST /lectura/sesion ─────────
   static async registrarSesion(req: Request, res: Response) {

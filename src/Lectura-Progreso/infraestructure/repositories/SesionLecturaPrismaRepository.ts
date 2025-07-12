@@ -1,5 +1,5 @@
 import { SesionLecturaRepository } from "../../domain/repositories/SesionLecturaRepository";
-import { SesionLectura } from "../../domain/entities/Sesionlectura";
+import { SesionLectura } from "../../domain/entities/SesionLectura";
 import prisma from "../prisma/client";
 import { SesionLecturaFactory } from "../../domain/factories/SesionLecturaFactory";
 
